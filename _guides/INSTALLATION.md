@@ -39,7 +39,7 @@ First, let's get the ELK server up and running. We will use the default settings
     docker-compose up -d
     ```
 
-    ![Docker Compose](./_assets/docker_compose.png)
+    ![Docker Compose](../_assets/docker_compose.png)
 
     To terminate the server operation, run the following command:
 
@@ -53,11 +53,11 @@ First, let's get the ELK server up and running. We will use the default settings
 
 -   Open a web browser in the ELK server and access **`localhost:5601`**. Head to `Kibana > Index patterns` and set up the GUI management panel. Define the index pattern, and find the fields. You can customize the setting, add more things to the pipeline, or build a new fancy GUI panel.
 
-    ![Kibana](./_assets/kibana_run_1.png)
+    ![Kibana](../_assets/kibana_run_1.png)
 
-    ![Kibana](./_assets/kibana_run_1b.png)
+    ![Kibana](../_assets/kibana_run_1b.png)
 
-    ![Kibana](./_assets/kibana_run_2.png)
+    ![Kibana](../_assets/kibana_run_2.png)
 
 That's it! You have successfully set up the server 🥳
 
@@ -140,7 +140,8 @@ That's it! You have successfully set up the client 🥳
 #### Testing
 
 Test an ICMP connectivity(`ping`) between ELK servers and ELK clients. You can consider disabling the Windows firewall that blocks communications while the machines are part of the ELK stack.
-<img src="./_assets/disable_firewalls_win10.png">
+
+![Disable Firewalls](../_assets/disable_firewalls_win10.png)
 
 #### Uninstall
 

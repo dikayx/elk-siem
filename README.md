@@ -24,7 +24,7 @@ The overall architecture is based on the ELK stack, which consists of Elasticsea
 
 ## Getting Started
 
-This project is designed to be used with [Docker](https://www.docker.com/). To get started, clone this repository and follow the instructions in the [install guide](./_guides/INSTALLATION.md).
+This project is designed to be used with [Docker](https://www.docker.com/). To get started, clone this repository and follow the instructions in the [installation guide](./_guides/INSTALLATION.md).
 
 ## License
 
