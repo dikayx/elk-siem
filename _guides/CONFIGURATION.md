@@ -2,6 +2,8 @@
 
 This document will give you an overview of the current configuration. You don't need to change this if you just want to use the default settings.
 
+## ELK Stack Configuration
+
 -   `docker-compose.yml` is for overall docker configuration setup. To make it simple, this project uses `7.1.1` version instead of `8`, not to consider about the enrollment token and miscellaneous security settings. Also, **port** configuration will be standardized according to this yml file. Other applications or setting files shouldn't have any conflict with this file.
 
     ```yml
@@ -70,3 +72,15 @@ This document will give you an overview of the current configuration. You don't 
         }
     }
     ```
+
+## Passwords
+
+The passwords for the services are stored in the [.env](../.env) file. You can change them to your liking.
+
+```yml
+# ...
+ELASTIC_PASSWORD=changeme
+# ...
+KIBANA_PASSWORD=changeme
+# ...
+```
