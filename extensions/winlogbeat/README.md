@@ -4,6 +4,16 @@ Winlogbeat is a lightweight agent that forwards Windows event logs to Logstash o
 
 ## Installation
 
+### Automated
+
+You can use the provided PowerShell scripts to setup a client with Winlogbeat and Sysmon. The scripts will download the necessary files and install them on the client. Just run the following command in PowerShell:
+
+```powershell
+PowerShell.exe -ExecutionPolicy UnRestricted -File .\Client-Install.ps1
+```
+
+### Manual
+
 > Make sure you have installed Sysmon on the Windows clients you want to monitor. You can download Sysmon from the [official website](https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon) where you can also find instructions on how to install it (basically just run `sysmon64.exe -accepteula -i` from the directory where you extracted the files).
 
 1. Download version 7.1.1 of Winlogbeat from the [official website](https://www.elastic.co/downloads/past-releases/winlogbeat-7-1-1)
@@ -12,7 +22,7 @@ Winlogbeat is a lightweight agent that forwards Windows event logs to Logstash o
 4. Run the following command to install Winlogbeat as a service:
 
     ```powershell
-    powershell -ExecutionPolicy Unrestricted -File .\install-service-winlogbeat.ps1
+    PowerShell.exe -ExecutionPolicy Unrestricted -File .\install-service-winlogbeat.ps1
     ```
 
 ## Configuration

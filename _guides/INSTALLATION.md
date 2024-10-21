@@ -73,6 +73,12 @@ That's it! You have successfully set up the server 🥳
 
     Sysmon will improve the logging capabilities of Windows.
 
+    -   _Optionally_, move Sysmon to `C:\Program Files\Sysmon`:
+
+        ```powershell
+        mv .\sysmon64.exe 'C:\Program Files\Sysmon\sysmon64.exe'
+        ```
+
 -   Setup **Winlogbeat**:
 
     > We're using version `7.1.1` of Winlogbeat to match the ELK stack version for compatibility reasons.
@@ -145,20 +151,44 @@ Test an ICMP connectivity(`ping`) between ELK servers and ELK clients. You can c
 
 #### Uninstall
 
+To uninstall the services on the server, just delete the containers and volumes associated with the ELK stack. For the client, you need to remove Sysmon and Winlogbeat.
+
+##### Sysmon
+
 To uninstall Sysmon, run the following command in the Sysmon directory:
 
 ```powershell
 .\sysmon64.exe -u
 ```
 
-To uninstall Winlogbeat, run the following command in the Winlogbeat directory:
+##### Winlogbeat
 
-```powershell
-.\winlogbeat.exe uninstall-service
-```
+To uninstall Winlogbeat, open a PowerShell terminal as an administrator and navigate to the Winlogbeat (`C:\Program Files\Winlogbeat`) directory.
 
-or
+1. Stop the Winlogbeat service:
 
-```powershell
-sc.exe delete winlogbeat
-```
+    ```powershell
+    Stop-Service winlogbeat
+    ```
+
+2. Uninstall the Winlogbeat service
+
+    ```powershell
+    PowerShell.exe -ExecutionPolicy UnRestricted -File .\uninstall-service-winlogbeat.ps1
+    ```
+
+    Verify that the service is removed:
+
+    ```powershell
+    Get-Service winlogbeat
+    ```
+
+3. Remove the Winlogbeat directory:
+
+    ```powershell
+    Remove-Item -Recurse -Force 'C:\Program Files\Winlogbeat'
+    ```
+
+## Scripts
+
+You can find PowerShell scripts for the client setup in the [extensions/winlogbeat](../extensions/winlogbeat) directory.
