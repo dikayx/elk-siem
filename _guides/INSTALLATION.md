@@ -63,7 +63,7 @@ That's it! You have successfully set up the server 🥳
 
 ### Client
 
--   Download **Sysmon** from the official [Microsoft](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) and follow the installation instructions, which are basically running the following command:
+-   Download **Sysmon** from [Microsoft](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) and follow the installation instructions, which are basically running the following command:
 
     ```powershell
     .\sysmon64.exe --accepteula --i
